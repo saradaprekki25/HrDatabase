@@ -1,10 +1,6 @@
 create database HR_Analytics_Database;
 
-use HR_Analytics_Database
-select * from AttendanceTable
-select * from DepartmentDetails
-select * from EmployeeDetails
-select * from SalaryDetails;
+use HR_Analytics_Database;
 
 
 -->Department Table
@@ -80,3 +76,16 @@ values	(1,'2025-11-10','09:20:08', 'Present'),
 		(2,'2025-11-10','09:15:00', 'Present'),
 		(3,'2025-11-10','00:00:00', 'Absent'),
 		(4,'2025-11-10','09:48:55', 'Present');
+
+--> viewing tables
+use HR_Analytics_Database
+select * from AttendanceTable
+select * from DepartmentDetails
+select * from EmployeeDetails
+select * from SalaryDetails;
+
+--> Joining tables
+use HR_Analytics_Database
+select e.First_Name as Employee_Name, s.Gross_Salary
+from EmployeeDetails e
+join SalaryDetails s on e.Emp_Id=s.Emp_Id;
